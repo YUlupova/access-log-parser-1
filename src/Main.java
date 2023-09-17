@@ -7,9 +7,9 @@ public class Main {
         System.out.println("Введите число:");
         int secondNumber = new Scanner(System.in) .nextInt ();
         double quotient=(double) firstNumber/secondNumber;
-        System.out.println(firstNumber+secondNumber);
-        System.out.println(firstNumber-secondNumber);
-        System.out.println(firstNumber*secondNumber);
-        System.out.println(quotient);
+        System.out.println("Сумма: " +(firstNumber+secondNumber));
+        System.out.println("Разность: "+(firstNumber-secondNumber));
+        System.out.println("Произведение: "+(firstNumber*secondNumber));
+        System.out.println("Частное: "+quotient);
     }
 }
