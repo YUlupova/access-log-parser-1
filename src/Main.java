@@ -25,11 +25,6 @@ public class Main {
                 System.out.println("Путь указан верно");
                 System.out.println("Это файл номер " + fileCounter);
 
-                // Variables to keep track of line statistics
-                int totalLines = 0;
-                int maxLength = 0;
-                int minLength = Integer.MAX_VALUE;
-
                 // Now, read the file line by line
                 FileReader fileReader = new FileReader(file);
                 BufferedReader reader = new BufferedReader(fileReader);
@@ -40,17 +35,9 @@ public class Main {
                         // Выбрасываем собственное исключение, если строка длиннее 1024 символов
                         throw new LineLengthExceededException("Строка в файле длиннее 1024 символов.");
                     }
-                    totalLines++;
-                    maxLength = Math.max(maxLength, length);
-                    minLength = Math.min(minLength, length);
                     // You can process the 'line' variable as needed
                 }
                 reader.close(); // Close the reader when done
-
-                // Print the statistics
-                System.out.println("Общее количество строк в файле: " + totalLines);
-                System.out.println("Длина самой длинной строки: " + maxLength);
-                System.out.println("Длина самой короткой строки: " + minLength);
             } catch (IOException e) {
                 System.out.println("Ошибка при чтении файла: " + e.getMessage());
             } catch (LineLengthExceededException e) {
